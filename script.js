@@ -38,3 +38,57 @@ function eraseText(){
     }
 }
 window.onload = typeWriter
+// Animating Skill Progress Bars on Scroll
+function animateSkills() {
+    const progressBars = document.querySelectorAll('.progress-bar');
+    progressBars.forEach(bar => {
+        const targetValue = bar.getAttribute('data-value');
+        const section = bar.closest("#skills");
+        const sectionPosition = section.getBoundingClientRect();
+        if (sectionPosition.top >= 0 && sectionPosition.bottom <= window.innerHeight) {
+            bar.style.width = `${targetValue}%`;
+        } else {
+            bar.style.width = `0%`;
+        }
+    });
+}
+
+window.addEventListener('scroll', animateSkills);
+// JavaScript for Smooth Scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent default anchor click behavior
+
+        // Select the target section
+        const targetSection = document.querySelector(this.getAttribute('href'));
+
+        // Scroll smoothly to the target section
+        targetSection.scrollIntoView({
+            behavior: 'smooth', // Smooth scrolling
+            block: 'start' // Align the target section to the top of the viewport
+        });
+    });
+});
+
+// JavaScript for Progress Bar Animation in Skills Section
+function animateSkills() {
+    const progressBars = document.querySelectorAll('.progress-bar');
+
+    progressBars.forEach(bar => {
+        const targetValue = bar.getAttribute('data-value'); // Get the target percentage value
+        const section = bar.closest("#skills"); // Check the skills section
+
+        const sectionPosition = section.getBoundingClientRect();
+
+        // Animate progress bars when the skills section is visible
+        if (sectionPosition.top >= 0 && sectionPosition.bottom <= window.innerHeight) {
+            bar.style.width = `${targetValue}%`;
+        } else {
+            // Reset the progress bars when the section is out of view
+            bar.style.width = `0%`;
+        }
+    });
+}
+
+// Listen for the scroll event to trigger progress bar animations
+window.addEventListener('scroll', animateSkills);

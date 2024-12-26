@@ -238,3 +238,146 @@ section{
         margin-top: 15px;
     }
 }
+#skills {
+    width: 100%;
+    padding: 50px 0;
+    background-color: #121212;
+    color: white;
+}
+
+.skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.skills-container h2 {
+    font-size: 2.5rem;
+    color: #077b32;
+    text-shadow: 0 0 10px #077b32;
+    margin-bottom: 30px;
+}
+
+.skills-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.skill-category {
+    width: 45%;
+    margin-bottom: 30px;
+}
+
+.skill-category h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #077b32;
+    text-shadow: 0 0 10px #077b32;
+}
+
+.skill {
+    margin-bottom: 15px;
+}
+
+.skill span {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.progress {
+    width: 100%;
+    background: #333;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.progress-bar {
+    height: 20px;
+    background: #077b32;
+    width: 0;
+    transition: width 1s ease;
+    text-align: center;
+    color: white;
+    line-height: 20px;
+    font-size: 0.9rem;
+}
+
+#skills {
+    width: 100%;
+    padding: 50px 0;
+    background: linear-gradient(to right, #121212, #1a1a1a);
+    color: white;
+    overflow: hidden;
+}
+
+.skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.skills-container h2 {
+    font-size: 2.5rem;
+    color: #00ff7f;
+    text-shadow: 0 0 10px #00ff7f, 0 0 20px #077b32;
+    margin-bottom: 30px;
+}
+
+.skills-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    animation: fadeIn 2s ease-out;
+}
+
+.skill-category {
+    width: 45%;
+    margin-bottom: 30px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 255, 127, 0.5);
+}
+
+.skill-category h3 {
+    font-size: 1.8rem;
+    color: #00ff7f;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #00ff7f, 0 0 20px #077b32;
+}
+
+.skill {
+    margin-bottom: 15px;
+}
+
+.skill span {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.progress {
+    width: 100%;
+    background: #333;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 5px;
+    height: 25px;
+}
+
+.progress-bar {
+    height: 25px;
+    background: #00ff7f;
+    text-align: center;
+    line-height: 25px;
+    color: black;
+    font-size: 0.9rem;
+    width: 0;
+    transition: width 1.2s ease, box-shadow 0.5s;
+}
+
+.progress-bar.active-bar {
+    box-shadow: 0 0 20px #00ff7f;
+}
