@@ -532,3 +532,16 @@ body::-webkit-scrollbar-thumb {
 .dot.active {
     background-color: #555;
 }
+
+/* Styles for the ball that follows the cursor */
+.cursor-dot {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background-color: #ffffff; /* Red color for visibility */
+    pointer-events: none; /* Make sure it doesn't block interactions */
+    transition: transform 0.1s ease;
+}

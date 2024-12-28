@@ -134,3 +134,14 @@ slideshowContainer.addEventListener('mouseleave', () => {
 
 // Initialize slideshow
 updateSlideshow();
+
+
+// Create the dot element and append it to the body
+const cursorDot = document.createElement('div');
+cursorDot.classList.add('cursor-dot');
+document.body.appendChild(cursorDot);
+
+// Update the position of the dot based on the cursor movement
+document.addEventListener('mousemove', function(e) {
+    cursorDot.style.transform = `translate(${e.pageX - 5}px, ${e.pageY - 5}px)`; 
+});
