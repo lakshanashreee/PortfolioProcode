@@ -456,3 +456,79 @@ body::-webkit-scrollbar-thumb {
     margin-bottom: 20px;
     text-align: justify;
 }
+#about {
+    width: 100%;
+    padding: 50px 0;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.about-container h2 {
+    font-size: 2.5rem;
+    color: #077b32;
+    text-shadow: 0 0 10px #077b32;
+    margin-bottom: 30px;
+}
+
+.about-content {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #cccccc;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+/* styles.css */
+
+.certifications-section {
+    padding: 50px 20px;
+}
+
+.slideshow-container {
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    flex-shrink: 0;
+    border-radius: 10px;
+}
+
+.dots-container {
+    margin-top: 10px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #555;
+}

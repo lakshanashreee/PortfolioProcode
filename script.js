@@ -91,4 +91,46 @@ function animateSkills() {
 }
 
 // Listen for the scroll event to trigger progress bar animations
-window.addEventListener('scroll', animateSkills);
+window.addEventListener('scroll', animateSkills);// script.js
+const slides = document.querySelector('.slides');
+const images = document.querySelectorAll('.slides img');
+const dots = document.querySelectorAll('.dot');
+
+let currentIndex = 0;
+
+// Function to update the slide position and dot status
+function updateSlideshow() {
+    const slideWidth = images[0].clientWidth;
+    slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+    });
+}
+
+// Function to show the next slide
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateSlideshow();
+}
+
+// Add event listeners for dots
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        currentIndex = index;
+        updateSlideshow();
+    });
+});
+
+// Auto slideshow
+let interval = setInterval(nextSlide, 3000);
+
+// Pause slideshow on hover
+const slideshowContainer = document.querySelector('.slideshow-container');
+slideshowContainer.addEventListener('mouseenter', () => clearInterval(interval));
+slideshowContainer.addEventListener('mouseleave', () => {
+    interval = setInterval(nextSlide, 3000);
+});
+
+// Initialize slideshow
+updateSlideshow();
