@@ -241,7 +241,7 @@ section{
 #skills {
     width: 100%;
     padding: 50px 0;
-    background-color: #121212;
+    background-color: #000000;
     color: white;
 }
 
@@ -310,42 +310,43 @@ section{
     background: linear-gradient(to right, #121212, #1a1a1a);
     color: white;
     overflow: hidden;
+    display: block; /* Ensures proper block-level rendering */
+    min-height: 175vh; /* Expands to ensure it takes up the full viewport height */
+    box-sizing: border-box; /* Includes padding and border in the height calculation */
 }
+
 
 .skills-container {
     max-width: 1200px;
+
+    max-height: 1000px;
     margin: 0 auto;
     text-align: center;
-}
-
-.skills-container h2 {
-    font-size: 2.5rem;
-    color: #00ff7f;
-    text-shadow: 0 0 10px #00ff7f, 0 0 20px #077b32;
-    margin-bottom: 30px;
 }
 
 .skills-wrapper {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 50px;
     animation: fadeIn 2s ease-out;
+    padding-bottom: 20px; /* Additional padding to avoid cut-off elements */
 }
 
 .skill-category {
     width: 45%;
-    margin-bottom: 30px;
+    margin-bottom: 20px; /* Slightly increased bottom margin for better spacing */
     background: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 255, 127, 0.5);
 }
 
+
 .skill-category h3 {
     font-size: 1.8rem;
     color: #00ff7f;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-shadow: 0 0 10px #00ff7f, 0 0 20px #077b32;
 }
 
@@ -357,6 +358,27 @@ section{
     font-size: 1rem;
     font-weight: bold;
 }
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.category {
+    width: 100%; /* Each category gets its space */
+    padding: 20px;
+    text-align: center;
+}
+
+.category h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #00ff7f;
+    text-shadow: 0 0 5px #00ff7f, 0 0 15px #005732;
+}
+
 
 .progress {
     width: 100%;
@@ -381,3 +403,214 @@ section{
 .progress-bar.active-bar {
     box-shadow: 0 0 20px #00ff7f;
 }
+/* General styling for radial chart */
+.chart {
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    margin: 20px;
+}
+
+.chart svg {
+    transform: rotate(-90deg); /* Rotate for progress to start at the top */
+    width: 100%;
+    height: 100%;
+}
+
+.chart svg .circle-bg {
+    fill: none;
+    stroke: #f0f0f0; /* Background circle color */
+    stroke-width: 2.8;
+}
+
+.chart svg .circle {
+    fill: none;
+    stroke: #76c7c0; /* Green progress color */
+    stroke-width: 2.8;
+    stroke-dasharray: 100; /* Full circumference as 100 */
+    stroke-dashoffset: 100; /* Fully hidden initially */
+    transition: stroke-dashoffset 0.6s ease-out;
+}
+
+.chart .chart-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+.certifications-section {
+    padding: 100px;
+    text-align: center;
+    background-color: #111;
+    color: #fff;
+}
+
+.certificates-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.certificate-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.certificate-images img {
+    width: 200%;
+    height: auto;
+    display: none;
+}
+
+.certificate-images img.active {
+    display: block;
+}
+
+.navigation-arrows {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.certificates-container:hover .navigation-arrows {
+    opacity: 1;
+}
+
+.arrow {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #fff;
+}
+.certificate-images img {
+    width: 400px; /* Adjust this value to change image width */
+    height: 300px; /* Maintain aspect ratio */
+    display: center;
+}
+.certificate-images {
+    display: flex;
+    justify-content: center; /* Center the images */
+    overflow: hidden; /* Prevent overflow */
+}
+.description {
+    display: none; /* Hide initially */
+    transition: all 0.5s ease; /* Smooth transition */
+    margin-left: 20px; /* Space between image and description */
+}
+.certificate img {
+    width: 200px; /* Adjust width as needed */
+    height: 133px; /* Maintain aspect ratio */
+    object-fit: cover; /* Resize and crop image */
+    border-radius: 10px; /* Optional: rounded corners */
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.certificate-images img.active {
+    display: block; /* Only active images are shown */
+}
+
+.certificate-images img {
+    display: none; /* All non-active images are hidden */
+}
+
+.certificate-images img {
+    display: none;
+}
+.certificate-images img.active {
+    display: block;
+}
+
+/* Contact Section Styling */
+#contact {
+    background-color: #000000; /* Dark theme background */
+    padding: 50px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    color: #00ff00;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 5px rgba(0, 255, 0, 0.8);
+}
+
+#contact p {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Contact Buttons */
+.contact-button {
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: #00ff00;
+    color: #111;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 255, 0, 0.6);
+    transition: all 0.3s ease;
+    text-decoration: none; /* For <a> links */
+}
+
+.contact-button:hover {
+    background-color: #00cc00;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.8);
+}
+
+/* Email Pop-up Section */
+.contact-info {
+    display: none;
+    margin-top: 20px;
+    background-color: #474444;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 255, 0, 0.5);
+    text-align: center;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.contact-info .email-link {
+    font-size: 1.2rem;
+    color: #00ff00;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contact-info .email-link:hover {
+    color: #00cc00;
+}
+
