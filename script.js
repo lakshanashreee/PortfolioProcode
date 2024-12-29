@@ -146,3 +146,20 @@ document.body.appendChild(cursorDot);
 document.addEventListener('mousemove', function(e) {
     cursorDot.style.transform = `translate(${e.pageX - 5}px, ${e.pageY - 5}px)`; 
 });
+
+document.querySelector('.contact-form').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent default form submission
+
+    // Submit the form data using Formspree API (optional but recommended)
+    fetch('https://formspree.io/f/xyzzjbbr', {
+        method: 'POST',
+        body: new FormData(this),
+    }).then(response => {
+        if (response.ok) {
+            this.reset(); // Reset form fields after submission
+            document.getElementById('successMessage').style.display = 'block'; // Show success message
+        } else {
+            alert('There was an error submitting the form.');
+        }
+    });
+});
