@@ -10,7 +10,6 @@ function cancel(){
 const texts = [
     "FRONT-END DEVELOPER",
     "BLOGGER",
-    "UI/UX DESIGNER",
     "PHOTOGRAPHER",
     "VIDEO EDITOR"
 ]
